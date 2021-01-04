@@ -61,10 +61,10 @@ export ALTERNATE_EDITOR=""
 
 # ----- Powerline-Go command line prompt for Bash -----------------------------
 function _update_ps1() {
-    PS1="$(/home/toex/bin/powerline-go -newline -hostname-only-if-ssh -numeric-exit-codes -cwd-max-depth 7 -error $?)"
+    PS1="$(${HOME}/bin/powerline-go -newline -hostname-only-if-ssh -numeric-exit-codes -cwd-max-depth 7 -error $?)"
 }
 
-if [ "$TERM" != "linux" ] && [ -f "/home/toex/bin/powerline-go" ]; then
+if [ "$TERM" != "linux" ] && [ -f "${HOME}/bin/powerline-go" ]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
@@ -103,4 +103,6 @@ export FZF_DEFAULT_OPTS="
 "
 
 
-# source /home/toex/.config/broot/launcher/bash/br
+# ----- broot -----------------------------------------------------------------
+# (Try this out, may not be used due to fzf...)
+source ${HOME}/.config/broot/launcher/bash/br
